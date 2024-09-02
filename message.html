@@ -1,0 +1,77 @@
+Here is a basic code for an instant messaging app using JavaScript in an HTML file:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instant Messaging App</title>
+	<style>
+		/* CSS code here */
+		body {
+			font-family: Arial, sans-serif;
+		}
+		
+		#messages {
+			width: 500px;
+			height: 300px;
+			border: 1px solid #ccc;
+			padding: 10px;
+			overflow-y: scroll;
+		}
+		
+		#input {
+			width: 500px;
+			height: 30px;
+			padding: 10px;
+			font-size: 16px;
+		}
+		
+		#send {
+			width: 100px;
+			height: 30px;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Instant Messaging App</h1>
+	<div id="messages"></div>
+	<input type="text" id="input" placeholder="Type a message...">
+	<button id="send">Send</button>
+	
+	<script>
+		// JavaScript code here
+		const messages = document.getElementById("messages");
+		const input = document.getElementById("input");
+		const send = document.getElementById("send");
+		
+		let messagesArray = [];
+		
+		send.addEventListener("click", () => {
+			if (input.value !== "") {
+				messagesArray.push(input.value);
+				messages.innerHTML += `<p>${input.value}</p>`;
+				input.value = "";
+			}
+		});
+		
+		input.addEventListener("keypress", (e) => {
+			if (e.key === "Enter" && input.value !== "") {
+				messagesArray.push(input.value);
+				messages.innerHTML += `<p>${input.value}</p>`;
+				input.value = "";
+			}
+		});
+	</script>
+</body>
+</html>
+```
+
+This code creates a basic instant messaging app with a text input field, a send button, and a message display area. When the user types a message and clicks the send button or presses the Enter key, the message is added to the message display area.
+
+Please note that this is a very basic example and doesn't include features like user authentication, real-time messaging, or data storage. For a fully functional instant messaging app, you would need to use a backend technology like Node.js and a database like MongoDB.

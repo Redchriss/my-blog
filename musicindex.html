@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Player</title>
+	<style>
+		.icons {
+			display: flex;
+		}
+		
+		.like, .comment, .share {
+			cursor: pointer;
+			margin: 0 10px;
+			font-size: 20px;
+		}
+		
+		.like:hover, .comment:hover, .share:hover {
+			color: #ccc;
+		}
+		
+		.liked {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="music-track">
+		<h2>Song 1</h2>
+		<audio controls>
+			<source src="song1.mp3" type="audio/mp3">
+		</audio>
+		<div class="icons">
+			<span class="like" onclick="like(this)">♥️</span>
+			<span class="comment" onclick="comment(this)">💬</span>
+			<span class="share" onclick="share(this)">👥</span>
+		</div>
+	</div>
+	
+	<div class="music-track">
+		<h2>Song 2</h2>
+		<audio controls>
+			<source src="song2.mp3" type="audio/mp3">
+		</audio>
+		<div class="icons">
+			<span class="like" onclick="like(this)">♥️</span>
+			<span class="comment" onclick="comment(this)">💬</span>
+			<span class="share" onclick="share(this)">👥</span>
+		</div>
+	</div>
+	
+	<script>
+		function like(icon) {
+			icon.classList.toggle('liked');
+		}
+		
+		function comment(icon) {
+			alert('Comment functionality coming soon!');
+		}
+		
+		function share(icon) {
+			alert('Share functionality coming soon!');
+		}
+	</script>
+</body>
+</html>
+```
+
+This code combines HTML, CSS, and JavaScript to create a music player with like, comment, and share icons. The CSS styles the icons, while the JavaScript handles the icon functionality.
